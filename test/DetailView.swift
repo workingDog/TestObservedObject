@@ -8,14 +8,20 @@
 
 import SwiftUI
 
-struct detailView: View {
+struct DetailView: View {
+    
+    @Binding var testItem: TestItem
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text(testItem.text)
+            Text(testItem.read.description)
+            Button(action: {
+                self.testItem.isRead.toggle()
+            }) {
+                Text("Toggle read")
+            }
+        }
     }
 }
 
-struct detailView_Previews: PreviewProvider {
-    static var previews: some View {
-        detailView()
-    }
-}

@@ -6,4 +6,9 @@
 //  Copyright © 2019 Ringo Wathelet. All rights reserved.
 //
 
-import Foundation
+import SwiftUI
+import Combine
+
+class TestObject: ObservableObject {
+    @Published var items: [TestItem] = []
+}
